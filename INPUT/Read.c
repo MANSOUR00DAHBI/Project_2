@@ -6,7 +6,7 @@
 #ifndef R_H
 #define R_H /* File input Charchter*/
 #endif /* R_H */
-#define MAXLINE 10000
+#define MAXLINE 1000
 /*****************************************************/
 int c; /*Read Input */
 int nc; /*Counte Charchter */
@@ -24,7 +24,7 @@ int IN_read();
 
 int IN_read() {
 	extern int c, nc;
-	for (nc = 0;/* (c = getchar()) != EOF || */(c = getchar()) != '^';++nc) {
+	for (nc = 0; (c = getchar()) != EOF && (c = getchar()) != '^';++nc) {
 		if (c == '\n') {
 			++nl;
 		}
@@ -36,13 +36,11 @@ int IN_read() {
 	return c;
 };
 int getline() {
-	extern int c , nc;
-	for (nc = 0;nc < MAXLINE - 1  &&(c = getchar()) != EOF && c != '\n';++nc) 
-	{
-		line[nc] = c;
+	extern int c , nc ;
+	for (nc = 0;nc < MAXLINE - 1  &&(c = getchar()) != EOF && c != '\n';++nc) line[nc] = c;
 		if (c == '\n')line[++nc] = c;
 		line[nc] = '\0';
-	}
+	
 		return c;
 }
 void copy() {
