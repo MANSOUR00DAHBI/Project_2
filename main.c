@@ -6,7 +6,6 @@ extern char longest[],line[];
 int lin;
 int main() {
 
-	printf("Hello Press Key CTRL + D To Exit \n");
 
 	//IN_read();
 	printf("Hello Press Key CTRL + D To Exit \n");
